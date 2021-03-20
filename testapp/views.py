@@ -38,6 +38,7 @@ def index(request):
 def categories(request, category_id):
     title = request.GET.get("title", "")
     output = f"<h2>Category {category_id}  Title: {title}</h2>"
+    #print('test')
     return HttpResponse(output)
 
 
