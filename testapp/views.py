@@ -23,7 +23,7 @@ def index(request):
         userform = UserForm(request.POST)
         if userform.is_valid():
             name = userform.cleaned_data["name"]
-            return HttpResponse("<h2>Hello, {0}</h2>".format(name))
+            return HttpResponse("<h2>Nice to meet you, {0}</h2>".format(name))
     return render(request, "index.html", {"form": userform})
 
 
@@ -38,7 +38,7 @@ def index(request):
 def categories(request, category_id):
     title = request.GET.get("title", "")
     output = f"<h2>Category {category_id}  Title: {title}</h2>"
-    #print('test')
+    #  print('test')
     return HttpResponse(output)
 
 
