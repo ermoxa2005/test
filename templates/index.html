@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Test Forms</title>
+</head>
+<body>
+    <form method="POST" novalidate>
+        {% csrf_token %}
+        <div>
+        {% for field in form %}
+            {{field.label_tag}}
+            <div>{{field}}</div>
+            <div class="error">{{field.errors}}</div>
+        {% endfor %}
+        </div>
+        <input type="submit" value="Send" >
+    </form>
+</body>
+</html>
